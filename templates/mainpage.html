@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content%}
+
+        <form method="post">
+            <ul>
+            <label>
+
+                
+            </ul>
+        </form>
+
+        <hr>
+            page {{page}}
+            <!--blog_entries {{count}} !-->
+
+
+            {% for blog_entry in blog_entries %}
+                <div class="post">
+                        <div class="blog_entry-title"><h2><a href="/blog/{{blog_entry.key().id()}}">{{ blog_entry.title}}</a></h2></div>
+                        <pre class="blog_entry-body">{{blog_entry.blog_entry}}</pre>
+                </div>
+                <br>
+            {% endfor %}
+
+        <p>
+            {% if prev_button %}
+                <a href="/blog?page={{ page - 1 }}">&lt; Previous</a>
+                &nbsp;&nbsp;
+            {% endif %}
+
+            {% if next_button and page !=1 %}
+                | &nbsp;&nbsp;
+                <a href="/blog?page={{ page + 1 }}">Next &gt;</a>
+            {% elif page == 1 %}
+                <a href="/blog?page={{ page + 1 }}">Next &gt;</a>
+            {% endif %}
+        </p>
+
+
+{% endblock %}

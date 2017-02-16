@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Build A Blog!</title>
+    </head>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .error {
+            color: red;
+        }
+        .post {
+            color: black;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+        }
+
+        input [type: text] {
+            width: 400px;
+            font-size: 20px;
+            padding: 2px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 200px;
+            font-size: 17px;
+            font-family: Arial;
+        }
+
+        input [type: submit] {
+            font-size: 24px;
+        }
+
+        hr {
+            margin: 20px auto;
+        }
+
+        .blog_entry + .blog_entry {
+            margin-top: 20px;
+        }
+
+        .blog_entry-title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .blog_entry-body {
+            margin: 0;
+            font-size: 17px;
+        }
+    </style>
+
+    <body>
+        <nav>
+            <a href="/blog">home</a> | <a href="/newpost">new post</a>
+        </nav>
+        <h1 style="bacground-color: #ddd; color: #305; margin: 0 height: 50px">
+            Build a Blog!
+        </h1>
+
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>
